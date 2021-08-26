@@ -19,6 +19,7 @@ function onInputChange(e) {
   const searchQuery = e.target.value.trim('');
   if (searchQuery === '') {
     refs.countryContainer.textContent = '';
+    refs.countryContainer.classList.remove('empty');
     return;
   }
   
@@ -34,10 +35,12 @@ function onInputChange(e) {
   function renderCountryCard(countries) {
     if (countries.length === 1) {
       refs.countryContainer.innerHTML = markupCountry(countries[0]);
+      refs.countryContainer.classList.add('empty');
       success({ text: `Search results:` });
       return;
     } else if (countries.length > 1 && countries.length <= 10) {
-        refs.countryContainer.innerHTML = markupList(countries);
+      refs.countryContainer.innerHTML = markupList(countries);
+      refs.countryContainer.classList.add('empty');
          info({ text: `Searching` });
         return;
     } else if (countries.length > 10) {
