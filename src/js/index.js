@@ -25,9 +25,6 @@ function onInputChange(e) {
   
   console.log(searchQuery);
   fetchCountries(searchQuery)
-    // .then(response => response.json())
-    // .then(data => console.log(data))
-  
     .then(response => (response.ok ? response.json() : Promise.reject(response)))
     .then(renderCountryCard)
     .catch(onFetchError);
