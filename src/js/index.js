@@ -1,4 +1,4 @@
-import '../sass/main.scss';
+// import '../sass/main.scss';
 import fetchCountries from './fetchCountries.js';
 import markupCountry from '../templates/country-card.hbs';
 import markupList from '../templates/country-list.hbs';
